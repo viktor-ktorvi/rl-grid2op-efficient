@@ -1,0 +1,51 @@
+[project]
+name = "python-repo-template"
+version = "0.1.0"
+author = [{name = "Your Name Here", email = "your@email.here"}]
+description = "Your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "mypy>=1.20.0",
+    "pre-commit>=4.5.1",
+    "pytest>=9.0.2",
+]
+
+[tool.pylint]
+disable = "C0114,C0115,C0116,R0903,R1710,W1203"
+max-line-length = 120
+max-locals = 20
+max-args = 16
+max-attributes = 20
+ignore = [
+    ".git",
+    "migrations",
+    "__pycache__"
+]
+
+[tool.flake8]
+max-line-length = 120
+ignore = ["E203", "E266", "E501", "W503"]
+docstring-convention = "numpy"
+max-complexity = 20
+per-file-ignores = []
+exclude = [
+    ".git",
+    "migrations",
+    "__pycache__"
+]
+
+[tool.black]
+line-length = 120
+target-version = ["py313"]
+
+[tool.isort]
+profile = "black"
+
+[tool.flynt]
+line-length = 120
+transform-concats = true
+verbose = true
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
